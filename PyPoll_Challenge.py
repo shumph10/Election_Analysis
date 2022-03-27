@@ -9,13 +9,14 @@ from unicodedata import name
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("Resources", "election_results.csv")
 
-if os.path.exists(myPath):
-    print("That file path doesn't exist")
-    #tells you what directory youre in when youre trying to open the path so you can edit your path if youre in the wrong one
-    print(f"you are at: {os.getcwd()}")
+
+# if not os.path.exists(file_to_load):
+#     print("That file path doesn't exist")
+#     #tells you what directory youre in when youre trying to open the path so you can edit your path if youre in the wrong one
+#     print(f"you are at: {os.getcwd()}")
 
 # Add a variable to save the file to a path.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
+file_to_save = os.path.join("Analysis", "election_analysis.txt")
 
 # Initialize a total vote counter.
 total_votes = 0
@@ -36,7 +37,7 @@ winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
 #will hold county with most votes
-winning_county = 0
+winning_county = ""
 #will hold the number of votes for the county with the highest turnout
 winning_county_votes = 0
 winning_county_vote_percentage = 0
@@ -82,7 +83,7 @@ with open(file_to_load) as election_data:
 
 
             # 4c: Begin tracking the county's vote count.
-        county_votes[county_name] = 0
+            county_votes[county_name] = 0
 
         # 5: Add a vote to that county's vote count.
         county_votes[county_name] +=1
@@ -112,7 +113,7 @@ with open(file_to_save, "w") as txt_file:
         c_vote_percentage = float(c_votes) / float(total_votes) *100
 
          # 6d: Print the county results to the terminal.
-        county_results = (f'{county_name}: {c_vote_percentage:.2f}% ({c_votes})\n')
+        county_results = (f'{county_name}: {c_vote_percentage:.1f}% ({c_votes:,})\n')
         print(county_results)
          # 6e: Save the county votes to a text file.
         txt_file.write(county_results)
@@ -120,13 +121,14 @@ with open(file_to_save, "w") as txt_file:
         if (c_votes > winning_county_votes):
             winning_county_votes = c_votes
             winning_county = county_name
+            winning_county_vote_percentage = c_vote_percentage
 
     # 7: Print the county with the largest turnout to the terminal.
     winning_county_summary = (
         f"------------------------\n"
         f"County wit highest turnout: {winning_county}\n"
-        f"Vote Count for {winning_county}: {winning_county_votes}\n"
-        f"Percentage of total votes for {winning_county}: {winning_county_vote_percentage:.2f}%\n"
+        f"Vote Count for {winning_county}: {winning_county_votes:,}\n"
+        f"Percentage of total votes for {winning_county}: {winning_county_vote_percentage:.1f}%\n"
         f"------------------------\n"
     )
     print(winning_county_summary)
