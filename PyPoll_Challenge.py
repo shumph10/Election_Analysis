@@ -9,7 +9,6 @@ from unicodedata import name
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("Resources", "election_results.csv")
 
-
 # if not os.path.exists(file_to_load):
 #     print("That file path doesn't exist")
 #     #tells you what directory youre in when youre trying to open the path so you can edit your path if youre in the wrong one
@@ -28,7 +27,6 @@ candidate_votes = {}
 # 1: Create a county list and county votes dictionary.
 county_options = []
 county_votes = {}
-
 
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
@@ -87,8 +85,6 @@ with open(file_to_load) as election_data:
 
         # 5: Add a vote to that county's vote count.
         county_votes[county_name] +=1
-
-
 
 # Save the results to our text file.
 with open(file_to_save, "w") as txt_file:
