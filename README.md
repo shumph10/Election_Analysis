@@ -1,11 +1,18 @@
 # Election_Analysis
+Local election results and trends analysis with python.
+
+--------------------------------------
 
 ## **Project Overview**
 A Colorado Board of Education employee asked for report of total number of votes cast, and total votes and percent of votes for each cadidate and county in a local election. From this information the winner based on popular vote would be declared. The county with the largest voter turn out and it's number of votes was also determined. This type of program would be devolped for use in the future, in both local and larger scale elections. Ballots were collected and information was pulled from an excel file into VS code for analysis with python.
 
+--------------------------------------
+
 ##**Resources**
--Data Source: election_results.csv
--Software: Python 3.9.7, Visual Studio Code, 1.65.2
+-Data Source: [election_results.csv](https://github.com/shumph10/Election_Analysis/blob/main/Resources/election_results.csv)
+-Software: Python 3.9.7, Visual Studio Code 1.65.2
+
+--------------------------------------
 
 ##**Results**
 The analysis of the election show that:
@@ -41,6 +48,14 @@ The following code was written with Python in VS Code to analyze the election da
 ![Screenshot_Election_Analysis_Code_3](https://user-images.githubusercontent.com/100040705/160434138-a42d77fb-7ddb-46b4-8489-cf6055a79deb.png)
 ![Screenshot_Election_Analysis_Code_4](https://user-images.githubusercontent.com/100040705/160434153-8912f77c-db16-4b3c-a26f-6698a5bc4f6e.png)
 
+--------------------------------------
 
 ##**Summary**
 This script has been shown to accurately and efficentially provide results for local election vote tallies. From the data the candiate and counties vote tallies were pulled to calcuate highest participation and winner of the election. This script could be applied to other local and state elections. The script could be modified to count votes for each candidate within each county, showing perfered winner for each area. It could additionally be modified to loop through election results and ensure no ballot was counted twice by ensuring the ballot ID number only occurs in the data once. If ballot ID numbers are connected to methods of voting, the script could be editted to show which method is most often used. With the results of ballot casting type efforts could be made to make other methods more accessable if needed within the community. 
+
+--------------------------------------
+
+##**Contact Me**
+
+Email: sarahhumphrey2016@outlook.com </br>
+[LinkedIn](https://www.linkedin.com/in/sarah-humphrey-data-analyst/)
